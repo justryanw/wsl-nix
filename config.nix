@@ -26,7 +26,7 @@ in
 
   home-manager = {
     extraSpecialArgs = { inherit inputs user; };
-    users.nixos = import ./home.nix;
+    users.${user} = import ./home.nix;
   };
 
   wsl-vpn.enable = true;
