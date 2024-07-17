@@ -11,7 +11,11 @@
       history.size = 1000;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
-      shellAliases.la = "ls -A";
+      shellAliases = {
+        la = "ls -A";
+        sys = "sudo systemctl";
+        usr = "systemctl --user";
+      };
     };
 
     starship.enable = true;
