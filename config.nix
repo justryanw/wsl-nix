@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ./modules/wsl-vpn.nix
+    ./modules/nixos/wsl-vpn.nix
   ];
 
   system.stateVersion = "24.05";
