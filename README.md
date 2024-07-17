@@ -1,5 +1,5 @@
 ## Quick Start
-1. Enable WSL if you haven't done already:
+1. Enable WSL if you haven't done so already:
 
 - ```powershell
   wsl --install --no-distribution
@@ -19,12 +19,12 @@
   wsl -d NixOS
   ```
 
-#### Update existing system
+## Update existing system
 - ```bash
   sudo nixos-rebuild switch --refresh --flake github:justryanw/wsl-nix
   ```
-#### Build WSL system tarball
 
+## Build WSL system tarball
 - ```bash
   sudo nix run .#nixosConfigurations.nixos.config.system.build.tarballBuilder
   ```
