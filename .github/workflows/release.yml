@@ -5,10 +5,6 @@ on:
     tags:
       - "v*.*.*"
 
-permissions:
-  contents: read
-  id-token: write
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -25,7 +21,7 @@ jobs:
         with:
           fail-mode: true
       - name: Build
-        run: nix run .#nixosConfigurations.nixos.config.system.build.tarballBuilder
+        run: sudo -E nix run .#nixosConfigurations.nixos.config.system.build.tarballBuilder
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
