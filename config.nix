@@ -24,6 +24,8 @@ in
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
+  programs.zsh.enable = true;
+
   users.users.${user}.shell = pkgs.zsh;
 
   home-manager = {
