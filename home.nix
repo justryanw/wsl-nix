@@ -22,6 +22,8 @@
 
     git = {
       enable = true;
+      userName = "Ryan Walker";
+      userEmail = "ryan.walker@inseinc.com";
       extraConfig.pull.rebase = false;
       aliases.acm = "!git add -A && git commit -m";
     };
