@@ -1,6 +1,7 @@
 { ... } @ inputs:
 let
-  # Don't change without folling thse steps https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
+  # Don't change user without folling thse steps https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
+  # Use this rebuild command: sudo nixos-rebuild boot --refresh --flake github:justryanw/wsl-nix
   user = "ryan";
 in
 {
