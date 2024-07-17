@@ -5,6 +5,9 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  contents: write
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -15,13 +18,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
-      - uses: DeterminateSystems/flake-checker-action@main
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Setup Cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+      - name: Check Flake
+        uses: DeterminateSystems/flake-checker-action@main
         with:
           fail-mode: true
-      - name: Build
-        run: nix build .#nixosConfigurations.nixos.config.system.build.tarballBuilder && sudo ./result/bin/nixos-wsl-tarball-builder
+      - name: Build Tarball Builder
+        run: nix build .#nixosConfigurations.nixos.config.system.build.tarballBuilder
+      - name: Build Tarball
+        run: sudo ./result/bin/nixos-wsl-tarball-builder
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
