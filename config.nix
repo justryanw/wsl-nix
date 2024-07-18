@@ -1,7 +1,7 @@
 { pkgs, ... } @ inputs:
 let
   # Don't change user without folling thse steps https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
-  # Use this rebuild command: sudo nixos-rebuild boot --refresh --flake github:justryanw/wsl-nix
+  # Use this rebuild command: nh os boot github:justryanw/wsl-nix
   user = "nixos";
 in
 {

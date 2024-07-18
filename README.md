@@ -21,7 +21,7 @@
 
 ## Update existing system
 - ```bash
-  sudo nixos-rebuild switch --refresh --flake github:justryanw/wsl-nix
+  nh os switch github:justryanw/wsl-nix
   ```
 
 ## Build WSL system tarball
