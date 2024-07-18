@@ -25,5 +25,15 @@
       extraConfig.pull.rebase = false;
       aliases.acm = "!git add -A && git commit -m";
     };
+
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        bitbucket = {
+          hostname = "bitbucket.ingg.com";
+          port = 7999;
+        };
+      };
+    };
   };
 }
