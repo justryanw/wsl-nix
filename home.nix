@@ -32,6 +32,7 @@
       enable = true;
       matchBlocks = {
         bitbucket = {
+          user = "ryan.walker";
           hostname = "bitbucket.ingg.com";
           port = 7999;
         };
