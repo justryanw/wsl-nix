@@ -37,5 +37,8 @@ in
 
   environment = {
     pathsToLink = [ "/share/zsh" ];
+    systemPackages = with pkgs; [
+      nh
+    ];
   };
 }
