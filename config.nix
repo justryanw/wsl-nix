@@ -28,7 +28,11 @@ in
 
   programs = {
     zsh.enable = true;
-    nh.enable = true;
+
+    nh = {
+      enable = true;
+      flake = "/home/${user}/flake";
+    };
 
     # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
     nix-ld = {
