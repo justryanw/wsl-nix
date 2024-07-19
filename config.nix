@@ -1,8 +1,8 @@
 { pkgs, ... } @ inputs:
 let
   # Don't change user without folling thse steps https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
-  # Use this rebuild command: nh os boot github:justryanw/wsl-nix
-  user = "nixos";
+  # Use this rebuild command: nh os boot github:justryanw/wsl-nix/ryan
+  user = "ryan";
 in
 {
   imports = [
@@ -25,6 +25,11 @@ in
   i18n.defaultLocale = "en_GB.UTF-8";
 
   programs.zsh.enable = true;
+
+  services.openssh = {
+    enable = true;
+    port = 2224;
+  };
 
   users.users.${user}.shell = pkgs.zsh;
 
