@@ -33,7 +33,7 @@ in
 
   users.users.${user} = {
     shell = pkgs.zsh;
-    authorizedKeys.keys = [
+    openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJbOCsQ0JHfnFgOanl56w/y1o3dhHtOnkgqW8aTBxWuc inseinc\ryan.walker@LAP00396"
     ];
   };
