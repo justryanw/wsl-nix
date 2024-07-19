@@ -31,7 +31,12 @@ in
     ports = [ 2224 ];
   };
 
-  users.users.${user}.shell = pkgs.zsh;
+  users.users.${user} = {
+    shell = pkgs.zsh;
+    authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJbOCsQ0JHfnFgOanl56w/y1o3dhHtOnkgqW8aTBxWuc inseinc\ryan.walker@LAP00396"
+    ];
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs user; };
