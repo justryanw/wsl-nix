@@ -24,7 +24,15 @@ in
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+
+    # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
+    nix-ld = {
+      enable = true;
+      package = pkgs.nix-ld-rs;
+    };
+  };
 
   services.openssh = {
     enable = true;
