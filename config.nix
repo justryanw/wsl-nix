@@ -26,6 +26,11 @@ in
 
   programs.zsh.enable = true;
 
+  services.openssh = {
+    enable = true;
+    port = 2224;
+  };
+
   users.users.${user}.shell = pkgs.zsh;
 
   home-manager = {
