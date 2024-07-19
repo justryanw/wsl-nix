@@ -21,6 +21,8 @@ in
     experimental-features = [ "nix-command" "flakes" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
@@ -42,6 +44,8 @@ in
   users.users.${user}.shell = pkgs.zsh;
 
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     extraSpecialArgs = { inherit inputs user; };
     users.${user} = import ./home.nix;
   };
@@ -50,8 +54,10 @@ in
 
   environment = {
     pathsToLink = [ "/share/zsh" ];
+    
     systemPackages = with pkgs; [
-      nh
+      nixd
+      nixpkgs-fmt
     ];
   };
 }
