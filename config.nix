@@ -28,7 +28,7 @@ in
 
   services.openssh = {
     enable = true;
-    port = 2224;
+    ports = [ 2224 ];
   };
 
   users.users.${user}.shell = pkgs.zsh;
