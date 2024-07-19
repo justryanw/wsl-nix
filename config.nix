@@ -28,6 +28,7 @@ in
 
   programs = {
     zsh.enable = true;
+    nh.enable = true;
 
     # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
     nix-ld = {
