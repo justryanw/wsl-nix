@@ -21,11 +21,14 @@ in
     experimental-features = [ "nix-command" "flakes" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
 
   programs = {
     zsh.enable = true;
+    nh.enable = true;
 
     # https://nix-community.github.io/NixOS-WSL/how-to/vscode.html
     nix-ld = {
@@ -51,6 +54,8 @@ in
   };
 
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     extraSpecialArgs = { inherit inputs user; };
     users.${user} = import ./home.nix;
   };
@@ -59,8 +64,10 @@ in
 
   environment = {
     pathsToLink = [ "/share/zsh" ];
+    
     systemPackages = with pkgs; [
-      nh
+      nixd
+      nixpkgs-fmt
     ];
   };
 }
