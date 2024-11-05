@@ -19,6 +19,7 @@
     };
 
     starship.enable = true;
+    carapace.enable = true;
 
     git = {
       enable = true;
