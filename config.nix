@@ -72,6 +72,7 @@ in
     systemPackages = with pkgs; [
       nixd
       nixpkgs-fmt
+      nix-output-monitor
     ];
   };
 }
