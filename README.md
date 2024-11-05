@@ -4,6 +4,7 @@
 - ```powershell
   wsl --install --no-distribution
   ```
+Restart your machine after this completes
 
 2. Download `nixos-wsl.tar.gz` from [the latest release](https://github.com/justryanw/wsl-nix/releases/latest).
 
