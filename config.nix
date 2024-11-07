@@ -2,7 +2,7 @@
 let
   # Don't change user without folling thse steps https://nix-community.github.io/NixOS-WSL/how-to/change-username.html
   # Use this rebuild command: nh os boot github:justryanw/wsl-nix/ryan
-  user = "ryan";
+  user = "nixos";
 in
 {
   imports = [
